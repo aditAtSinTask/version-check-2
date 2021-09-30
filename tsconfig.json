@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,           
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "lib": ["dom", "es2015"]
   }
 }

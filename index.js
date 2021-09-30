@@ -130,7 +130,4 @@ function versionCheck(packageName, version) {
     });
 }
 exports["default"] = versionCheck;
-
-module.exports = versionCheck;
-module.exports.default = versionCheck;
 ;
