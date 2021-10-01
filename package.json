@@ -1,6 +1,6 @@
 {
   "name": "version-check-2",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "Check the version of an NPM Package",
   "license": "MIT",
   "author": {

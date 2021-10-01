@@ -80,8 +80,9 @@ const versionCheck2 = async (packageName, version) => {
       return {
         status: 'success',
         data: {
-          exists: (responseStatus.requestVersion === 404) ? false : true,
-          latestVersion: (responseStatus.latestVersion === 404) ? '0.0.0' : responseData.latestVersion.version
+          packageExists: (responseStatus.latestVersion === 404) ? false : true,
+          versionExists: (responseStatus.requestVersion === 404) ? false : true,
+          latestVersion: (responseStatus.latestVersion === 404) ? 'no.package.found' : responseData.latestVersion.version
         }
       };
     } else {
