@@ -1,3 +1,5 @@
+![Github Actions Workflow Status](https://github.com/aditatsintask/version-check-2/actions/workflows/npm-publish.yml/badge.svg)
+
 # Version Check 2
 
 Check the version of an NPM Package
