@@ -1,9 +1,4 @@
-/**
- *
- * @param {*} packageName = NPM Package name, should be string
- * @param {*} version     = NPM Package version, should be string
- */
-declare namespace versionCheck2 {
+declare namespace versionCheck2Function {
   interface Return {
     status: string,
     data?: {
@@ -15,7 +10,12 @@ declare namespace versionCheck2 {
 }
 
 declare const versionCheck2: {
-  (packageName: string, version: string): Promise<versionCheck2.Return>;
+  /**
+   *
+   * @param {*} packageName = NPM Package name, should be string
+   * @param {*} version     = NPM Package version, should be string
+   */
+  (packageName: string, version: string): Promise<versionCheck2Function.Return>;
   default: typeof versionCheck2;
 }
 

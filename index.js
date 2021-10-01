@@ -45,19 +45,6 @@ const versionCheck2 = async (packageName, version) => {
       }
     );
 
-    let latestResponse = null;
-    if (version !== 'latest') {
-      latestResponse = await fetch(
-        `${npmRegistryURL}/${packageName}/latest`,
-        {
-          headers,
-          method: 'GET'
-        }
-      );
-    } else {
-      latestResponse = response;
-    }
-
     const responseData = {
       requestVerison: await response.json(),
       latestVersion: null
@@ -67,8 +54,22 @@ const versionCheck2 = async (packageName, version) => {
       latestVersion: null
     };
 
-    responseData.latestVersion = await latestResponse.json();
-    responseStatus.latestVersion = parseInt(latestResponse.status, 0);
+    let latestResponse = null;
+    if (version !== 'latest') {
+      latestResponse = await fetch(
+        `${npmRegistryURL}/${packageName}/latest`,
+        {
+          headers,
+          method: 'GET'
+        }
+      );
+
+      responseData.latestVersion = await latestResponse.json();
+      responseStatus.latestVersion = parseInt(latestResponse.status, 0);
+    } else {
+      responseData.latestVersion = responseData.requestVerison;
+      responseStatus.latestVersion = responseStatus.requestVersion;
+    }
 
     if (
       (
@@ -89,7 +90,7 @@ const versionCheck2 = async (packageName, version) => {
   } catch (error) {
     return {
       status: 'error',
-      message: error
+      message: error.message
     }
   }
 };
