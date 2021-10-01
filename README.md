@@ -1,4 +1,5 @@
-![Github Actions Workflow Status](https://github.com/aditatsintask/version-check-2/actions/workflows/npm-publish.yml/badge.svg)
+![NPM Package Version](https://img.shields.io/npm/v/version-check-2.svg)
+![Github Actions Workflow Status](https://img.shields.io/github/workflow/status/aditatsintask/version-check-2/Node.js%20Package)
 
 # Version Check 2
 
