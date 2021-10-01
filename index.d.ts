@@ -2,7 +2,8 @@ declare namespace versionCheck2Function {
   interface Return {
     status: string,
     data?: {
-      exists: boolean,
+      packageExists: boolean,
+      versionExists: boolean,
       latestVersion: string
     },
     message?: any
