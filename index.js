@@ -22,7 +22,7 @@ const versionCheck2 = async (packageName, version) => {
   }
 
   try {
-    version = (!!version && typeof(version) === 'string') ? version : 'latest';
+    version = (!!version && typeof(version) === 'string') ? version.toLowerCase() : 'latest';
     packageName = (!!packageName && typeof(packageName) === 'string') ? packageName.toLowerCase() : '';
 
     if (
@@ -32,7 +32,7 @@ const versionCheck2 = async (packageName, version) => {
         {
           includePrerelease: true
         }
-      ))
+      )) && version !== 'latest'
     ) {
       throw new Error(`Version ${version} is invalid, should using semver`);
     }
