@@ -1,12 +1,12 @@
 declare namespace versionCheck2Function {
   interface Return {
-    status: string,
+    status: string;
     data?: {
-      packageExists: boolean,
-      versionExists: boolean,
-      latestVersion: string
-    },
-    message?: any
+      packageExists: boolean;
+      versionExists: boolean;
+      latestVersion: string;
+    };
+    message?: any;
   }
 }
 
@@ -18,6 +18,6 @@ declare const versionCheck2: {
    */
   (packageName: string, version: string): Promise<versionCheck2Function.Return>;
   default: typeof versionCheck2;
-}
+};
 
 export = versionCheck2;
